@@ -8,7 +8,7 @@ DEBUG = False
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 
-ALLOWED_HOSTS = [ "sar.btspti.com", "45.90.123.172" ]
+ALLOWED_HOSTS = [ "sar.btspti.com", "localhost", "sss.btspti.com" ]
 
 INSTALLED_APPS += [
 

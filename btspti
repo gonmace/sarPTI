@@ -1,0 +1,30 @@
+# /etc/nginx/sites-available/btspti
+
+upstream web_btspti {
+    server localhost:8008;
+}
+server {
+    server_name sss.btspti.com www.sss.btspti.com;
+
+    location = /favicon.ico { 
+        access_log off; 
+        log_not_found off; 
+        }
+
+    location /static/ {
+        autoindex on;
+        alias /home/pti/sarPTI/staticfiles/;
+        }
+    
+    location /media/ {
+        autoindex on;
+        alias /home/pti/sarPTI/media/;
+        }
+
+    location / {
+        proxy_pass http://web_btspti;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_redirect off;    
+        }
+}
