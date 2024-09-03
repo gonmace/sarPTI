@@ -137,7 +137,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com']
+CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://sss.btspti.com']
 
 LOGIN_REDIRECT_URL = 'main:home'
 

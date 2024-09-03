@@ -7,15 +7,15 @@ services:
     build: .
     restart: always
     ports:
-    - 8008:8000
+    - 8899:8000
     volumes:
     - ./:/app
     depends_on:
       - sar-db
 
-  sar-db:
+  db:
     image: postgres:14.3-alpine3.16
-    container_name: sar-db
+    container_name: btspti-db
     ports:
       - 5433:5432
     environment:
